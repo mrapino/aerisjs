@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example: Polaris POI data</title>
+
+  <link rel="stylesheet" href="../../css/example.css"/>
+
+  <script type="text/javascript"
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxTEbJsXwGRW4zDj8fpVsenDMMQGhZhUU&sensor=false">
+  </script>
+  <script type="text/javascript" src="../../../externals/openlayers/OpenLayers.debug.js"></script>
+  <script type="text/javascript" src="../../../externals/require.js" data-main="../../initialize"></script>
+
+  <script type="text/javascript">
+
+    function initialize() {
+      require.setStrategy('gmaps');
+      require([
+        'base/map',
+        'polaris/maps/base/markercollections/poimarkercollection',
+        'polaris/maps/base/markercollections/dealermarkercollection',
+        'vendor/jquery',
+        'aeris/util'
+      ], function(Map) {
+
+        function bindMarkerEvents(marker) {
+          marker.on('click', function(latLon, mrkr) {
+            var html = _.template(tmpl, mrkr.toJSON());
+            $('#placeInfo').html(html);
+          });
+        }
+
+        window.$ = require('vendor/jquery');
+        window._ = require('aeris/util');
+
+        window.tmpl = $('#placeTemplate').html();
+
+        window.map = new Map('map-canvas', {
+          center: [44.977818, -93.263540],
+          zoom: 14
+        });
+
+        window.markers = {};
+
+
+        $('#selectMarkers').on('change', 'input', function() {
+          var filter = $(this).val();
+          var isChecked = $(this).prop('checked');
+          var MarkerClass = aeris.polaris.maps[$(this).data('markers')];
+
+          if (!window.markers[filter]) {
+            window.markers[filter] = new MarkerClass();
+            markers[filter].getParams().addFilter(filter);
+            bindMarkerEvents(markers[filter]);
+          }
+
+          if (isChecked) {
+            markers[filter].setMap(map);
+          }
+          else {
+            markers[filter].removeMap();
+          }
+        });
+
+      });
+    }
+  </script>
+
+</head>
+<body>
+<div id="map-canvas"></div>
+
+<script id="placeTemplate" type="text/template">
+  <h2><%=service.name %></h2>
+  <small><%=service.type %></small>
+  <p>
+    <%=service.address %><br />
+    <%=place.name %>, <%=place.state %> <%=service.postalCode %><br />
+    <%=service.phone %>
+  </p>
+</script>
+
+<div id="placeInfo">Click an icon for place info</div>
+
+<div id="selectMarkers">
+  <div>
+    <label>
+      <input type="checkbox" value="gas" data-markers="POIMarkers"/>Gas
+    </label>
+    <label>
+      <input type="checkbox" value="hotel" data-markers="POIMarkers"/>Hotel
+    </label>
+    <label>
+      <input type="checkbox" value="medical" data-markers="POIMarkers"/>Medical
+    </label>
+    <label>
+      <input type="checkbox" value="food" data-markers="POIMarkers"/>Food
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="checkbox" value="orv" data-markers="DealerMarkers"/>ORV Dealers
+    </label>
+    <label>
+      <input type="checkbox" value="sno" data-markers="DealerMarkers"/>Snowmobile Dealers
+    </label>
+    <label>
+      <input type="checkbox" value="ind" data-markers="DealerMarkers"/>Indian Motorcycle Dealers
+    </label>
+    <label>
+      <input type="checkbox" value="vic" data-markers="DealerMarkers"/>Victory Dealers
+    </label>
+  </div>
+</div>
+</body>
+</html>

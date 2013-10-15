@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Polaris: POI</title>
+
+  <link rel="stylesheet" href="../../css/example.css"/>
+
+  <script type="text/javascript"
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxTEbJsXwGRW4zDj8fpVsenDMMQGhZhUU&sensor=false&libraries=geometry">
+  </script>
+  <script type="text/javascript" src="../../../externals/require.js"
+          data-main="../../initialize.js"></script>
+
+  <script type="text/javascript">
+    function initialize() {
+      require.setStrategy('gmaps');
+      require([
+        'base/map',
+        'polaris/maps/base/markercollections/poimarkercollection'
+      ], function(Map, MarkerCollection) {
+        window.map = new Map('map-canvas');
+
+        window.markers = new MarkerCollection();
+        markers.setMap(map);
+      });
+    }
+  </script>
+</head>
+<body>
+  <div id="map-canvas"></div>
+</body>
+</html>
