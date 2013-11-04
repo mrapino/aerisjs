@@ -119,6 +119,10 @@
             selectedWaypoint: {
               url: 'icon_polaris.png'
             }
+          },
+          onload: function(state) {
+            console.log('builder complete');
+            window.state = state;
           }
         });
         builder.build()
