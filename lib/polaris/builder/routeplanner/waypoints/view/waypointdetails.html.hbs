@@ -1,10 +1,32 @@
-
-<div class="aeris-waypointDetails-header">
-  <h3 style="display: inline-block; float: left">{{ service.name }}</h3>
-  <div style="display: inline-block; float: left">
-    <a href="#" class="aeris-revealBtn">more...</a>
+{{! POI Waypoint details }}
+<div style="
+  position: absolute;
+  width:100%;
+  top:0; left:0;
+  z-index: 999;
+">
+  <div class="aeris-dragHandle" style="
+  width: 100px;
+  margin: 0 auto;
+  padding: 5px 20px;
+  border-top: 1px dashed #4E4E4E;
+  border-bottom: 1px dashed #4E4E4E;
+  font-size: 11px;
+  text-align: center;
+  background: rgba(0,0,0,0.05);
+  ">
+    Drag me!
   </div>
-  <button class="aeris-closeBtn" style="display: inline-block; float: right">close</button>
+</div>
+<div class="aeris-waypointDetails-header">
+  <h3 style="display: inline-block; float: left; margin: 5px;">{{ service.name }}</h3>
+
+  <div style="display: inline-block; float: right; margin-top:15px">
+    <button class="aeris-closeBtn">close</button>
+    <button class="aeris-revealBtn">more...</button>
+    <button class="aeris-hideBtn">less...</button>
+  </div>
+
   <div style="clear: both"></div>
   <div>
     <small>{{ service.type }} </small>
@@ -14,8 +36,8 @@
 <hr/>
 
 <p>
-  {{ service.address }}<br />
-  {{ place.name}}, {{ place.state }} {{ service.postalCode }}<br />
-  {{ service.phone }} <br />
+  {{ service.address }}<br/>
+  {{ place.name}}, {{ place.state }} {{ service.postalCode }}<br/>
+  {{ service.phone }} <br/>
   <a href="{{ service.url }}" target="_blank">{{ service.url }}</a>
 </p>
