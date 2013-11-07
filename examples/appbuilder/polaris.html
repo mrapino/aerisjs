@@ -47,8 +47,17 @@
           waypoints: [
             {
               name: 'POIMarkers',
-              filters: ['gas'],
-              default: true
+              menuItems: {
+                fuel: ['gas', 'fuel'],
+                restaurants: ['food'],
+                medical: ['er', 'hospital']
+              }
+            },
+            {
+              name: 'DealerMarkers',
+              menuItems: {
+                dealers: ['orv', 'snow']
+              }
             }
           ],
           route: {
