@@ -1,19 +1,22 @@
 {{! POI Waypoint details }}
-<div style="
+<div class="aeris-dragHandle" style="
   position: absolute;
   width:100%;
   top:0; left:0;
   z-index: 999;
 ">
-  <div class="aeris-dragHandle" style="
-  width: 100px;
+  <div style="
+  width: 60%;
   margin: 0 auto;
-  padding: 5px 20px;
+  padding: 3px 20px;
+  height: 15px;
   border-top: 1px dashed #4E4E4E;
-  border-bottom: 1px dashed #4E4E4E;
   font-size: 11px;
   text-align: center;
-  background: rgba(0,0,0,0.05);
+  background: rgba(116, 116, 116, 0.95);
+  margin-top: -20px;
+  color: white;
+  font-weight: bold;
   ">
     Drag me!
   </div>
@@ -21,7 +24,7 @@
 <div class="aeris-waypointDetails-header">
   <h3 style="display: inline-block; float: left; margin: 5px;">{{ service.name }}</h3>
 
-  <div style="display: inline-block; float: right; margin-top:15px">
+  <div style="display: inline-block; float: right">
     <button class="aeris-closeBtn">close</button>
     <button class="aeris-revealBtn">more...</button>
     <button class="aeris-hideBtn">less...</button>
@@ -35,9 +38,12 @@
 
 <hr/>
 
-<p>
+<p style="float: left">
   {{ service.address }}<br/>
   {{ place.name}}, {{ place.state }} {{ service.postalCode }}<br/>
+</p>
+<p style="float:right">
   {{ service.phone }} <br/>
   <a href="{{ service.url }}" target="_blank">{{ service.url }}</a>
 </p>
+<div style="clear: both"></div>
