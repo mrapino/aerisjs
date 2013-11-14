@@ -36,7 +36,7 @@
       ], function(AppBuilder) {
         var builder = new AppBuilder({
           el: document.getElementById('app'),
-          map: {
+          mapOptions: {
             center: [44.97307701415332, -93.26208114624023],
             zoom: 15
           },
@@ -45,12 +45,33 @@
             routes: true
           },
           waypoints: [
-            {
+            /*{
               name: 'POIMarkers',
               menuItems: {
-                fuel: ['gas', 'fuel'],
+                //fuel: ['gas', 'fuel'],
                 restaurants: ['food'],
                 medical: ['er', 'hospital']
+              }
+            },*/
+            {
+              name: 'FuelMarkers',
+              class: 'POIMarkers',
+              menuItems: {
+                fuel: ['gas', 'fuel']
+              }
+            },
+            {
+              name: 'MedicalMarkers',
+              class: 'POIMarkers',
+              menuItems: {
+                medical: ['medical', 'er']
+              }
+            },
+            {
+              name: 'RestaurantMarkers',
+              class: 'POIMarkers',
+              menuItems: {
+                food: ['food']
               }
             },
             {
