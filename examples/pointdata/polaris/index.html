@@ -17,16 +17,19 @@
       require.setStrategy('gmaps');
       require([
         'base/map',
-        'polaris/maps/base/markercollections/poimarkercollection',
-        'polaris/maps/base/markercollections/dealermarkercollection',
+        'polaris/maps/packages/markers',
         'vendor/jquery',
         'aeris/util'
-      ], function(Map) {
+      ], function (Map) {
 
         function bindMarkerEvents(marker) {
-          marker.on('click', function(latLon, mrkr) {
-            var html = _.template(tmpl, mrkr.toJSON());
-            $('#placeInfo').html(html);
+          marker.on('click', function (latLon, mrkr) {
+            try {
+              var html = _.template(tmpl, mrkr.toJSON());
+              $('#placeInfo').html(html);
+            } catch(e) {
+              console.warn('Unable to template marker data. \n Data: ', mrkr.toJSON());
+            }
           });
         }
 
@@ -37,13 +40,13 @@
 
         window.map = new Map('map-canvas', {
           center: [44.977818, -93.263540],
-          zoom: 14
+          zoom: 7
         });
 
         window.markers = {};
 
 
-        $('#selectMarkers').on('change', 'input', function() {
+        $('#selectMarkers').on('change', 'input', function () {
           var filter = $(this).val();
           var isChecked = $(this).prop('checked');
           var MarkerClass = aeris.polaris.maps[$(this).data('markers')];
@@ -74,8 +77,8 @@
   <h2><%=service.name %></h2>
   <small><%=service.type %></small>
   <p>
-    <%=service.address %><br />
-    <%=place.name %>, <%=place.state %> <%=service.postalCode %><br />
+    <%=service.address %><br/>
+    <%=place.name %>, <%=place.state %> <%=service.postalCode %><br/>
     <%=service.phone %>
   </p>
 </script>
@@ -109,6 +112,30 @@
     </label>
     <label>
       <input type="checkbox" value="victory" data-markers="DealerMarkers"/>Victory Dealers
+    </label>
+  </div>
+  <div>
+    <label>
+      <input value="orv" data-markers="TrailheadMarkers" type="checkbox"/>
+      ORV Trailheads
+    </label>
+  </div>
+  <div>
+    <label>
+      <input value="snow" data-markers="TrailheadMarkers" type="checkbox"/>
+      Snowmobile Trailheads
+    </label>
+  </div>
+  <div>
+    <label>
+      <input value="indian" data-markers="TrailheadMarkers" type="checkbox"/>
+      Indian Trailheads
+    </label>
+  </div>
+  <div>
+    <label>
+      <input value="victory" data-markers="TrailheadMarkers" type="checkbox"/>
+      Victory Trailheads
     </label>
   </div>
 </div>
