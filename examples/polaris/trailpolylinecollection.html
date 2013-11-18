@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Polaris: Trails Polyline</title>
+
+  <link rel="stylesheet" href="../css/example.css"/>
+
+  <script type="text/javascript"
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxTEbJsXwGRW4zDj8fpVsenDMMQGhZhUU&sensor=false&libraries=geometry">
+  </script>
+  <script type="text/javascript" src="../../externals/require.js"
+          data-main="../initialize.js"></script>
+
+  <script type="text/javascript">
+    function initialize() {
+      require.setStrategy('gmaps');
+      require([
+        'base/map',
+        'polaris/maps/base/polylines/trailpolylinecollection',
+        'polaris/api/endpoint/collection/trailcollection'
+      ], function(Map, TrailPolylineCollection, TrailCollection) {
+        window.map = new Map('map-canvas', {
+          center: [45.210896818418, -95.3187085058],
+          zoom: 9
+        });
+
+        window.trails = new TrailCollection();
+
+        window.trailView = new TrailPolylineCollection(undefined, {
+          data: trails
+        });
+
+        trailView.setMap(map);
+
+
+        map.on('change:bounds', fetchTrailData);
+
+
+        function fetchTrailData() {
+          trails.setParams({
+            p: map.get('bounds')
+          });
+
+          trails.fetch().
+            done(function(res) {
+              console.log('Trail model fetched: ', res);
+            }).
+            fail(function(err) {
+              console.log('Error fetching trail model: ', err);
+            });
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+<div id="map-canvas"></div>
+</body>
+</html>
