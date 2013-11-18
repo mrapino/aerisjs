@@ -32,13 +32,14 @@
         'polaris/routeplanner/routeplannerbuilder',
         'packages/layers',
         'packages/markers',
-        'polaris/maps/packages/markers'
+        'polaris/maps/packages/markers',
+        'polaris/maps/packages/layers'
       ], function(AppBuilder) {
         var builder = new AppBuilder({
           el: document.getElementById('app'),
           mapOptions: {
             center: [44.97307701415332, -93.26208114624023],
-            zoom: 15
+            zoom: 10
           },
           waypoints: [
             {
@@ -84,6 +85,10 @@
             selectedWaypoint: {
               url: 'icon_polaris.png'
             }
+          },
+          publicTrails: {
+            default: false,
+            trailTypes: ['snow', 'orv']
           },
           onload: function(state) {
             console.log('builder complete');
