@@ -55,9 +55,9 @@
           controls: {
             routeBuilder: false
           },
-          onload: function(state) {
+          onload: function(exposed) {
             console.log('builder complete');
-            window.state = state;
+            window.exposed = exposed;
           }
         });
         builder.build()
