@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find me a route with waypoints</title>
+
+  <script type="text/javascript" src="../../externals/require.js" data-main="../initialize"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+  function initialize() {
+    require([
+      'aeris/util',
+      'polaris/api/endpoint/collection/trailcollection'
+    ], function(_, TrailCollection) {
+      window.trails = new TrailCollection();
+      var params = trails.getParams();
+      var fields = params.get('fields');
+
+      fields.push('waypoints');
+
+      params.set('limit', 10000);
+
+      trails.fetch().done(onSync);
+
+
+      function onSync() {
+        window.wpTrails = new TrailCollection(trails.filter(function(trail) {
+          return !!trail.get('waypoints');
+        }));
+        console.log(wpTrails.toJSON());
+      }
+    });
+
+
+  }
+</script>
+
+</body>
+</html>
