@@ -72,19 +72,27 @@
         padding: 10px;
         font-size: 14px;
         font-weight: bold;
+        float: left;
+        width: 65%;
       }
         #routeInfo article p {
-          float: left;
-          width: 70%;
           margin: 10px 10px 0 0;
         }
-        #routeInfo article aside {
-          float: left;
-          background: #fff;
-          color: green;
-          font-weight: bold;
-          padding: 10px
-        }
+
+      #routeInfo aside {
+        float: left;
+        background: #fff;
+
+        color: green;
+        font-weight: bold;
+        font-size: 14px;
+        text-transform: uppercase;
+
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin: 10px 0 0 0;
+      }
 
 
     #detailsApp {
@@ -113,6 +121,7 @@
       require([
         'polaris/routeplanner/routeplannerbuilder',
         'vendor/text!examples/appbuilder/view/routeinfo.html.hbs',
+        'vendor/text!examples/appbuilder/view/waypointinfo.html.hbs',
         'vendor/handlebars',
         'vendor/jquery',
         'packages/layers',
@@ -120,7 +129,7 @@
         'polaris/maps/packages/markers',
         'polaris/maps/packages/layers',
         'polaris/maps/base/polylines/trailpolyline'
-      ], function(AppBuilder, routeInfoTemplate) {
+      ], function(AppBuilder, routeInfoTemplate, waypointInfoTemplate) {
         window.$ = require('vendor/jquery');
         window.Handlebars = require('vendor/handlebars');
 
@@ -128,7 +137,8 @@
           return (meters * 0.000621371).toFixed(1);
         });
 
-        var template = Handlebars.compile(routeInfoTemplate);
+        routeInfoTemplate = Handlebars.compile(routeInfoTemplate);
+        waypointInfoTemplate = Handlebars.compile(waypointInfoTemplate);
 
         var builder = new AppBuilder({
           el: document.getElementById('detailsApp'),
@@ -181,14 +191,24 @@
             window.exposed = exposed;
 
             exposed.on('change:route', renderInfo);
+
+            exposed.get('eventHub').on('waypoint:click', renderWaypoint);
           }
         });
         builder.build();
 
+        $(document).on('click', '.closeBtn', renderInfo);
+
 
 
         function renderInfo() {
-          var view = template(exposed.get('route'));
+          var view = routeInfoTemplate(exposed.get('route'));
+          $('#routeInfo').html(view);
+        }
+
+
+        function renderWaypoint() {
+          var view = waypointInfoTemplate(exposed.get('selectedWaypoint'));
           $('#routeInfo').html(view);
         }
       });
