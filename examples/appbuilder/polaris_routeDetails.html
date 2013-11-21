@@ -10,14 +10,96 @@
   <link rel="stylesheet" href="style/app-styles-hack-job.css"/>
 
   <style type="text/css">
-    #app {
-      position: absolute;
-      top:0;
-      bottom:0;
-      left:0;
-      right:0;
+    .container {
+      width: 900px;
+      margin: 0 auto;
+    }
+
+    #routeInfo {
+      float: left;
+      width: 29%;
+      height: 600px;
+      box-sizing: border-box;
+      border: 1px solid #4c4c4c;
+
+      background: #ddd;
+      font-family: "Helvetica", sans-serif;
+    }
+
+      #routeInfo .title {
+        padding: 10px;
+        background: black;
+        color: #fff;
+      }
+
+        #routeInfo .title h2 {
+          margin: 5px 0 0 0;
+          font-weight: normal;
+        }
+
+      #routeInfo .feature {
+        float: left;
+        border-bottom: 1px solid #777777;
+        border-right: 1px solid #777777;
+        padding: 10px;
+
+        width: 50%;
+        box-sizing: border-box;
+      }
+        #routeInfo .feature:last-child:after {
+          content: '';
+          clear: both;
+        }
+
+        #routeInfo .feature label {
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 1.65em;
+        }
+        #routeInfo .featureValue {
+          font-size: 38px;
+          font-weight: bold;
+        }
+          #routeInfo .featureValue small {
+            font-size: 19px;
+            margin: 0 5px;
+            color: #666;
+          }
+
+      #routeInfo article {
+        clear: both;
+        padding: 10px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+        #routeInfo article p {
+          float: left;
+          width: 70%;
+          margin: 10px 10px 0 0;
+        }
+        #routeInfo article aside {
+          float: left;
+          background: #fff;
+          color: green;
+          font-weight: bold;
+          padding: 10px
+        }
+
+
+    #detailsApp {
+      float: left;
+      width: 69%;
+      height: 600px;
+
+      margin-left: 2%;
+      box-sizing: border-box;
+    }
+
+    #detailsApp .aeris-maps-app {
       width: 100%;
       height: 100%;
+      margin: 0;
     }
   </style>
 
@@ -30,19 +112,58 @@
       require.setStrategy('gmaps');
       require([
         'polaris/routeplanner/routeplannerbuilder',
+        'vendor/text!examples/appbuilder/view/routeinfo.html.hbs',
+        'vendor/handlebars',
+        'vendor/jquery',
         'packages/layers',
         'packages/markers',
         'polaris/maps/packages/markers',
         'polaris/maps/packages/layers',
         'polaris/maps/base/polylines/trailpolyline'
-      ], function(AppBuilder) {
+      ], function(AppBuilder, routeInfoTemplate) {
+        window.$ = require('vendor/jquery');
+        window.Handlebars = require('vendor/handlebars');
+
+        Handlebars.registerHelper('toMiles', function(meters) {
+          return (meters * 0.000621371).toFixed(1);
+        });
+
+        var template = Handlebars.compile(routeInfoTemplate);
+
         var builder = new AppBuilder({
-          el: document.getElementById('app'),
+          el: document.getElementById('detailsApp'),
           mapOptions: {
             center: [44.97307701415332, -93.26208114624023],
             zoom: 10
           },
           waypoints: [
+            {
+              name: 'FuelMarkers',
+              class: 'POIMarkers',
+              menuItems: {
+                fuel: ['gas', 'fuel']
+              }
+            },
+            {
+              name: 'MedicalMarkers',
+              class: 'POIMarkers',
+              menuItems: {
+                medical: ['medical', 'er']
+              }
+            },
+            {
+              name: 'RestaurantMarkers',
+              class: 'POIMarkers',
+              menuItems: {
+                food: ['food']
+              }
+            },
+            {
+              name: 'DealerMarkers',
+              menuItems: {
+                dealers: ['indian', 'victory']
+              }
+            }
           ],
           routeDetails: {
             trailId: '51631af000fced5b73008a15',
@@ -58,14 +179,26 @@
           onload: function(exposed) {
             console.log('builder complete');
             window.exposed = exposed;
+
+            exposed.on('change:route', renderInfo);
           }
         });
-        builder.build()
+        builder.build();
+
+
+
+        function renderInfo() {
+          var view = template(exposed.get('route'));
+          $('#routeInfo').html(view);
+        }
       });
     }
   </script>
 </head>
 <body>
-  <div id="app"></div>
+<div class="container">
+  <div id="routeInfo"></div>
+  <div id="detailsApp"></div>
+</div>
 </body>
 </html>
