@@ -91,9 +91,11 @@
             default: false,
             trailTypes: ['snow', 'orv']
           },
-          onload: function(state) {
+          onload: function(exposed) {
             console.log('builder complete');
-            window.state = state;
+            window.exposed = exposed;
+            window.state = exposed.get('state');
+            window.eventHub = exposed.get('eventHub');
           }
         });
         builder.build()
