@@ -122,6 +122,7 @@
         'polaris/routeplanner/routeplannerbuilder',
         'vendor/text!examples/appbuilder/view/routeinfo.html.hbs',
         'vendor/text!examples/appbuilder/view/waypointinfo.html.hbs',
+        'vendor/text!examples/appbuilder/view/publicwaypointinfo.html.hbs',
         'vendor/handlebars',
         'vendor/jquery',
         'packages/layers',
@@ -129,7 +130,7 @@
         'polaris/maps/packages/markers',
         'polaris/maps/packages/layers',
         'polaris/maps/base/polylines/trailpolyline'
-      ], function(AppBuilder, routeInfoTemplate, waypointInfoTemplate) {
+      ], function(AppBuilder, routeInfoTemplate, waypointInfoTemplate, publicWaypointInfoTemplate) {
         window.$ = require('vendor/jquery');
         window.Handlebars = require('vendor/handlebars');
 
@@ -139,6 +140,7 @@
 
         routeInfoTemplate = Handlebars.compile(routeInfoTemplate);
         waypointInfoTemplate = Handlebars.compile(waypointInfoTemplate);
+        publicWaypointInfoTemplate = Handlebars.compile(publicWaypointInfoTemplate);
 
         var builder = new AppBuilder({
           el: document.getElementById('detailsApp'),
@@ -173,6 +175,9 @@
               menuItems: {
                 dealers: ['indian', 'victory']
               }
+            },
+            {
+              name: ''
             }
           ],
           routeDetails: {
@@ -191,8 +196,10 @@
             window.exposed = exposed;
 
             exposed.on('change:route', renderInfo);
+            exposed.get('eventHub').on('trailhead:click', renderInfo);
 
             exposed.get('eventHub').on('waypoint:click', renderWaypoint);
+            exposed.get('eventHub').on('publicwaypoint:click', renderPublicWaypoint);
           }
         });
         builder.build();
@@ -209,6 +216,12 @@
 
         function renderWaypoint() {
           var view = waypointInfoTemplate(exposed.get('selectedWaypoint'));
+          $('#routeInfo').html(view);
+        }
+
+
+        function renderPublicWaypoint() {
+          var view = publicWaypointInfoTemplate(exposed.get('selectedWaypoint'));
           $('#routeInfo').html(view);
         }
       });
