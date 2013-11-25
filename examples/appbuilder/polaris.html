@@ -40,62 +40,7 @@
           el: document.getElementById('app'),
           mapOptions: {
             center: [44.97307701415332, -93.26208114624023],
-            zoom: 10
-          },
-          waypoints: [
-            {
-              name: 'FuelMarkers',
-              class: 'POIMarkers',
-              menuItems: {
-                fuel: ['gas', 'fuel']
-              }
-            },
-            {
-              name: 'MedicalMarkers',
-              class: 'POIMarkers',
-              menuItems: {
-                medical: ['medical', 'er']
-              }
-            },
-            {
-              name: 'RestaurantMarkers',
-              class: 'POIMarkers',
-              menuItems: {
-                food: ['food']
-              }
-            },
-            {
-              name: 'DealerMarkers',
-              menuItems: {
-                dealers: ['indian', 'victory']
-              }
-            },
-            {
-              name: 'PhotoMarkers',
-              menuItems: {
-                photos: []
-              }
-            }
-          ],
-          route: {
-            path: {
-              strokeColor: 'red',
-              strokeWeight: 3
-            },
-            offPath: {
-              strokeColor: 'green',
-              strokeWeight: 3
-            },
-            waypoint: {
-              url: 'icon_polaris_grey.png'
-            },
-            selectedWaypoint: {
-              url: 'icon_polaris.png'
-            }
-          },
-          publicTrails: {
-            default: false,
-            trailTypes: ['snow', 'orv']
+            zoom: 14
           },
           onload: function(exposed) {
             console.log('builder complete');
