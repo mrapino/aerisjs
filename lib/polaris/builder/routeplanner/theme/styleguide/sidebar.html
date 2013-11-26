@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/styleguide.css"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="shortcut icon" type="image/x-icon" href="/examples/weather.ico"/>
+  <title>RiderX Portal Sidebar Style Guide</title>
+</head>
+<body>
+<div class="sg-container aeris-scope">
+
+  <div class="sg-mapApp">
+
+    <div class="sideMenu">
+
+      <section>
+        <header>
+          <span class="controlsIcon"></span>
+          Map Options
+          <a class="toggleCollapseBtn" href="#"></a>
+        </header>
+
+        <section>
+          <fieldset>
+            <legend>
+              <span class="markerIcon"></span>
+              Waypoints
+            </legend>
+
+            <ul class="multiSelect">
+              <li>
+                <label>
+                  <input type="checkbox"/>
+                  Photos
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox"/>
+                  Closures
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox"/>
+                  Hazards
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox"/>
+                  Dealers
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox"/>
+                  Fuel
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox"/>
+                  Restaurants
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox"/>
+                  Lodging
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox"/>
+                  Medical
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox"/>
+                  Dest. Videos
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset>
+            <legend>
+              <span class="markerIcon"></span>
+              Trails
+            </legend>
+
+            <ul class="multiSelect">
+              <li>
+                <label>
+                  <input type="checkbox"/>
+                  Rider Created
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox"/>
+                  Managed Trails
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+        </section>
+      </section>
+
+      <section class="state-closed">
+        <header>
+          <span class="controlsIcon"></span>
+          Section header (closed)
+          <a class="toggleCollapseBtn" href="#"></a>
+        </header>
+        <div>
+          Some content in a closed section
+          which shouldn't be visible, because
+          the section is closed.
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <ul>
+        <li>
+          <span class="infoIcon"></span>
+          <span>Tips</span>
+        </li>
+        <li>
+          Other footer content
+        </li>
+      </ul>
+    </footer>
+  </div>
+
+  <h2>Collapsed state</h2>
+
+  <div class="sg-mapApp">
+
+    <div class="sideMenu state-collapsed">
+      <section>
+        Some content in a closed section
+        which shouldn't be visible, because
+        the section is closed.
+      </section>
+    </div>
+
+  </div>
+
+
+  <div class="sg-mapApp">
+    <div class="sideMenu">
+      <header>Nearby Trails</header>
+      <div class="subHeader">6 Trails Found</div>
+
+      <ul class="itemList">
+        <li>
+          <div class="content">
+            <h1>Some Awesome Trail</h1>
+            <h2>near North Bend, WA</h2>
+          </div>
+          <ul class="meta">
+            <li>39.5 mi</li>
+            <li><span class="openIcon"></span></li>
+          </ul>
+        </li>
+        <li>
+          <div class="content">
+            <h1>Some Awesome Trail</h1>
+            <h2>near North Bend, WA</h2>
+          </div>
+          <ul class="meta">
+            <li>39.5 mi</li>
+            <li><span class="openIcon"></span></li>
+          </ul>
+        </li>
+        <li>
+          <div class="content">
+            <h1>Some Awesome Trail</h1>
+            <h2>near North Bend, WA</h2>
+          </div>
+          <ul class="meta">
+            <li>39.5 mi</li>
+            <li><span class="openIcon"></span></li>
+          </ul>
+        </li>
+        <li>
+          <div class="content">
+            <h1>Some Awesome Trail</h1>
+            <h2>near North Bend, WA</h2>
+          </div>
+          <ul class="meta">
+            <li>39.5 mi</li>
+            <li><span class="openIcon"></span></li>
+          </ul>
+        </li>
+        <li>
+          <div class="content">
+            <h1>Some Awesome Trail</h1>
+            <h2>near North Bend, WA</h2>
+          </div>
+          <ul class="meta">
+            <li>39.5 mi</li>
+            <li><span class="openIcon"></span></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sg-mapApp">
+    <div class="sideMenu">
+      <section>
+        <header>Route Planner</header>
+        <ul class="buttonMenu">
+          <li>
+            <a href="#">
+              <span class="saveIcon"></span>
+              <span class="btnLabel">Save</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="undoIcon"></span>
+              <span class="btnLabel">Undo</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="deleteIcon"></span>
+              <span class="btnLabel">Clear</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="returnIcon"></span>
+              <span class="btnLabel">Return</span>
+            </a>
+          </li>
+        </ul>
+        <section>
+          Snap to Trails
+        </section>
+
+        <hr/>
+
+        <section>
+          <dl>
+            <dt>Total distance</dt>
+            <dd>5.61 mi</dd>
+
+            <dt>Elevation</dt>
+            <dd>673 meters</dd>
+          </dl>
+        </section>
+
+        <hr/>
+
+        <section class="info">
+          <header>No points yet</header>
+          <p>
+            Begin by selecting the location on the map where
+            you would like your route to begin. Your selected
+            points will appear here as you add them along your route.
+          </p>
+        </section>
+
+      </section>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
