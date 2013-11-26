@@ -1,0 +1,56 @@
+/**
+ * Button styles.
+*/
+
+%btn {
+  @include appearance(none);
+  position: relative;
+
+  padding: 10px 20px;
+  margin: 5px;
+
+  color: $text-black;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  &:hover {
+    top: -1px;
+    left: -1px;
+  }
+  &:active {
+    top: 1px;
+    left: 1px;
+  }
+}
+
+.actionBtn {
+  @extend %btn;
+
+  background: $red;
+  color: $text-white;
+  font-weight: normal;
+}
+
+.secondaryBtn {
+  @extend %btn;
+
+  background: $greyDk;
+}
+
+.externalButton {
+  @extend .actionBtn;
+
+  &:after {
+    content: '';
+    @extend .icon-rDblChevronDk;
+
+    position: relative;
+    top: 2px;
+    left: 9px;
+  }
+}

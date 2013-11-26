@@ -1,0 +1,29 @@
+/**
+ * Main stylesheet for Polaris RoutePlanner app.
+ *
+ * style.scss
+*/
+// Wrap all styles within the aeris scope
+// to prevent global style leakage.
+@import "compass";
+@import "partials/font";
+
+.aeris-scope {
+
+  // Vendor imports
+  @import "partials/normalize";
+
+  // Global styles
+  @import "partials/typography";
+  @import "partials/color";
+  @import "partials/icon";
+  @import "partials/button";
+  @import "partials/form";
+  @import "partials/layout";
+
+  // Views
+  @import "partials/view/infopanel";
+  @import "partials/view/modal";
+  @import "partials/view/sidemenu";
+}
+

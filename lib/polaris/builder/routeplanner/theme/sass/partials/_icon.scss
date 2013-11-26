@@ -1,0 +1,10 @@
+/**
+ * Compass-generated icon spritesheet.
+*/
+$icon-sprite-dimensions: true;
+@import "icon/*.png";
+@include all-icon-sprites;
+
+.icon-sprite {
+  display: inline-block;
+}

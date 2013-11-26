@@ -1,0 +1,15 @@
+/**
+ * Font definitions.
+*/
+@include font-face("Urbano Condensed", font-files(
+    "urbano-cond-webfont.woff",
+    "urbano-cond-webfont.ttf",
+    "urbano-cond-webfont.svg"
+), "urbano-cond-webfont.eot");
+
+// Bold version
+@include font-face("Urbano Condensed", font-files(
+    "urbano-boldcond-webfont.woff",
+    "urbano-boldcond-webfont.ttf",
+    "urbano-boldcond-webfont.svg"
+), "urbano-cond-webfont.eot", bold);

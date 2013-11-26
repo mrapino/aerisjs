@@ -1,0 +1,26 @@
+/**
+ * Typographic styles.
+*/
+// Font config
+@mixin font-body {
+  font-family: "Urbano Condensed", Arial, sans-serif;
+}
+@mixin font-header {
+  font-family: "Urbano Condensed", Arial, sans-serif;
+  font-weight: bold;
+}
+
+
+$text-black: #222;
+$text-grey: #777;
+$text-white: #fff;
+$text-offWhite: #e6e6e6;
+$text-red: #c70402;
+
+* {
+  @include font-body;
+  font-size: 16px;
+}
+h1, h2, h3, h4, h5, h6, header {
+  @include font-header;
+}
