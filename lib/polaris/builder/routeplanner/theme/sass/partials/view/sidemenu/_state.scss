@@ -1,0 +1,57 @@
+/**
+ * State styles.
+*/
+.sideMenu {
+  section {
+    &, &.state-open {
+
+      h1 {
+        .icon-sprite {
+          margin-right: 5px;
+          vertical-align: -3px;
+        }
+
+        // Close icon
+        &:after {
+          content: '';
+          @extend .icon-close;
+
+          position: relative;
+          top: 2px;
+
+          float: right;
+        }
+      }
+    }
+
+    &.state-closed {
+      * {
+        display: none;
+      }
+
+      h1 {
+
+        .icon-sprite {
+          display: inline-block;
+        }
+
+        display: block;
+
+        background-color: $black;
+
+        &:after {
+          @extend .icon-rChevronDk;
+          top: 1px;
+        }
+
+        &:hover {
+          background-color: #000;
+        }
+
+        &:active {
+          background-color: $redDk;
+        }
+      }
+    }
+  }
+}

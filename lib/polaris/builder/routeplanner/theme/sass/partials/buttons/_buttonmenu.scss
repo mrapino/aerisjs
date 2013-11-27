@@ -1,0 +1,45 @@
+/**
+ * Button menu
+*/
+.sideMenu {
+
+  .buttonMenu {
+    @extend %inlineList;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    li {
+      width: 25%;
+      height: 60px;
+      @include box-sizing(border-box);
+
+      text-align: center;
+      text-transform: uppercase;
+
+      padding: 10px 5px;
+
+      cursor: pointer;
+
+      border-left: 1px solid #aeaeae;
+      border-bottom: 1px solid #aeaeae;
+      &:first-child { border-left: none; }
+
+      .icon-sprite {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 5px;
+      }
+
+
+      @extend %greyBtn;
+      a {
+        @extend %cleanLink;
+        &:active {
+          border-left-color: #666;
+          & + li { border-left-color: #666; }
+        }
+      }
+    }
+  }
+}

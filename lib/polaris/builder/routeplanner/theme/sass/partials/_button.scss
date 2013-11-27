@@ -3,6 +3,8 @@
 */
 
 %btn {
+  display: inline-block;
+  
   @include appearance(none);
   position: relative;
 
@@ -15,16 +17,31 @@
   text-transform: uppercase;
 
   border-radius: 5px;
+  border: 1px solid rgba(0,0,0,.1);
 
   cursor: pointer;
 
   &:hover {
     top: -1px;
     left: -1px;
+    @include box-shadow(1px 1px 0 0 rgba(0, 0, 0, 0.65));
   }
   &:active {
     top: 1px;
     left: 1px;
+    @include box-shadow(none);
+  }
+}
+
+%greyBtn {
+  background-color: $greyLt;
+
+
+  &:hover {
+    background-color: $greyDk;
+  }
+  &:active {
+    background-color: #aeaeae;
   }
 }
 
@@ -54,3 +71,32 @@
     left: 9px;
   }
 }
+
+
+.geolocateBtn {
+  @include inline-block;
+
+  background-color: $black;
+
+  line-height: 0;
+  padding: 8px;
+
+  &:after {
+    content: '';
+    @extend .icon-geolocate;
+
+    margin-top: 1px;
+  }
+
+  &:hover {
+    background-color: #000;
+  }
+  &:active {
+    &:after {
+      margin-top: 2px;
+      margin-left: 1px;
+    }
+  }
+}
+
+@import "buttons/buttonmenu";

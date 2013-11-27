@@ -1,0 +1,38 @@
+/**
+ * Text input styles
+*/
+@mixin placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+input[type=text], textarea {
+  display: block;
+
+  padding: 5px;
+  margin-top: 5px;
+  width: 350px;
+  max-width: 100%;
+
+  color: $text-red;
+  font-size: 16px;
+  line-height: 1.5em;
+
+  border: 1px solid #aeaeae;
+  @include border-radius(5px);
+
+  background: $offWhite;
+
+  &:focus {
+    @include appearance(none);
+    outline: none;
+  }
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}

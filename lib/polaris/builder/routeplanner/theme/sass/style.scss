@@ -14,12 +14,14 @@
   @import "partials/normalize";
 
   // Global styles
+  @import "partials/utility";
   @import "partials/typography";
   @import "partials/color";
   @import "partials/icon";
   @import "partials/button";
   @import "partials/form";
   @import "partials/layout";
+  @import "partials/misc";
 
   // Views
   @import "partials/view/infopanel";

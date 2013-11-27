@@ -1,3 +1,9 @@
 /**
- * _layout.scss
+ * Layout styles.
 */
+
+.column {
+  @include box-sizing(border-box);
+  float: left;
+  width: 50%;
+}

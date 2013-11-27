@@ -1,0 +1,26 @@
+/**
+ * Map controls.
+*/
+.sideMenu {
+  .mapControls {
+    h1 {
+      text-transform: none;
+    }
+
+    h2 {
+      // Headings with Icons
+      &.markerHeading {
+        @extend %iconHeading;
+        &:before {
+          @extend .icon-marker;
+        }
+      }
+      &.trailHeading {
+        @extend %iconHeading;
+        &:before {
+          @extend .icon-trail;
+        }
+      }
+    }
+  }
+}

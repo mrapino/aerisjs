@@ -1,0 +1,23 @@
+/**
+ * Search input style
+*/
+input[type=search] {
+  color: $text-white;
+  background: $black url(../images/icon/search.png) no-repeat 8px;
+  text-indent: 30px;
+
+  @include border-radius(0);
+  border: 1px solid #414141;
+
+  @include font-body;
+
+  @include placeholder {
+    color: $text-offWhite;
+  }
+
+  &:active, &:focus {
+    @include appearance(none);
+    @include box-shadow(none);
+    outline: none;
+  }
+}

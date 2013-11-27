@@ -19,8 +19,13 @@ $text-red: #c70402;
 
 * {
   @include font-body;
-  font-size: 16px;
 }
 h1, h2, h3, h4, h5, h6, header {
   @include font-header;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 10px 0 0 0;
 }

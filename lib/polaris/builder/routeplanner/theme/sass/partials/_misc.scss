@@ -1,0 +1,32 @@
+/**
+ * Miscellaneous styles
+*/
+
+hr {
+  margin: 0;
+  border: 1px solid $red;
+}
+
+dl {
+  @include box-sizing(border-box);
+  @include pie-clearfix;
+
+  margin: 0;
+  padding: 5px 10px;
+
+  dt {
+    clear: both;
+    float: left;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-top: 8px;
+  }
+  dd {
+    float: right;
+    font-size: 24px;
+
+    padding: 5px;
+  }
+}

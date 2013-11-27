@@ -1,0 +1,33 @@
+/**
+ * Geosearch controls.
+*/
+.sideMenu {
+  .geosearch {
+    @include pie-clearfix;
+
+    .geolocateBtn, input[type=search] {
+      @include box-sizing(border-box);
+
+      height: 35px;
+      border-bottom: 1px solid #414141;
+      border-left: 1px solid #414141;
+
+      &:first-child {
+        border-left: none;
+      }
+    }
+
+    .geolocateBtn {
+      float: left;
+
+      width: 13%;
+    }
+    input[type=search] {
+      float: right;
+
+      width: 87%;
+      margin: 0;
+    }
+
+  }
+}

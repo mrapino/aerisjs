@@ -4,13 +4,45 @@
  * _sidemenu.scss
 */
 .sideMenu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
 
-}
+  width: 250px;
+  height: 100%;
+  @include box-sizing(border-box);
 
-.menu {
-  header {
-    font-size: 18px;
-    border-bottom: 1px solid #999;
-    padding-top: 10px;
+  border-right: 1px solid  #d2d2d2;
+
+  background: $greyLt;
+
+  .scrollable {
+    @include box-sizing(border-box);
+    height: 100%;
+    overflow: scroll;
+  }
+
+  .menu {
+    padding: 5px 10px;
+
+    border-bottom: 1px solid #d2d2d2;
+
+    .menuControls {
+      @include pie-clearfix;
+      margin: 5px 10px 5px 25px;
+    }
+  }
+
+  dl {
+    border-bottom: 1px solid #aeaeae;
   }
 }
+
+@import "sidemenu/typography";
+@import "sidemenu/state";
+@import "sidemenu/geosearch";
+@import "sidemenu/mapcontrols";
+@import "sidemenu/footer";
+@import "sidemenu/list";
+@import "sidemenu/empty";

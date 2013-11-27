@@ -6,5 +6,5 @@ $icon-sprite-dimensions: true;
 @include all-icon-sprites;
 
 .icon-sprite {
-  display: inline-block;
+  @include inline-block;
 }

@@ -1,0 +1,64 @@
+/**
+ * Side menu footer styles.
+*/
+$footerHeight: 35px;
+
+.sideMenu {
+  // Room for footer
+  padding-bottom: $footerHeight;
+
+  .scrollable {
+    padding-bottom: $footerHeight;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    @include box-sizing(border-box);
+    height: $footerHeight;
+    width: 100%;
+
+    background: $black;
+
+    color: $text-offWhite;
+    line-height: 1.25em;
+
+    a {
+      @extend %cleanLink;
+      &, &:hover, &:active {
+        color: $text-offWhite;
+      }
+
+      li {
+        &:hover {
+          background-color: #000;
+        }
+        &:active {
+          background-color: #292929;
+        }
+      }
+    }
+
+    ul {
+      @extend %inlineList;
+      @include box-sizing(border-box);
+      height: 100%;
+
+      li {
+        @include box-sizing(border-box);
+        height: 100%;
+
+        padding: 8px 10px;
+
+        border-right: 1px solid #414141;
+      }
+    }
+
+    .icon-sprite {
+      margin-right: 5px;
+      vertical-align: -4px;
+    }
+  }
+}
