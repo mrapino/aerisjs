@@ -8,6 +8,7 @@
 
 .mapCanvas {
   position: relative;
+  z-index: $zIndexMap;
   width: 100%;
   height: 100%;
 }

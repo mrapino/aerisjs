@@ -5,6 +5,8 @@
 */
 .sideMenu {
   position: absolute;
+  z-index: $zIndexMapOverlay;
+
   top: 0;
   bottom: 0;
   left: 0;
