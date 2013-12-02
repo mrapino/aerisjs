@@ -1,8 +1,10 @@
-<label>
-  <input type="checkbox" value="{{i18n type}}"
-    {{#if selected}}
-         checked
-    {{/if}}
-          />
+<input type="checkbox"
+       value="{{i18n type}}"
+       id="aeris-waypoint-checkbox-{{ type }}"
+      {{#if selected}}
+           checked
+      {{/if}}
+      />
+<label class="checkbox" for="aeris-waypoint-checkbox-{{ type }}">
   {{i18n type }}
 </label>
