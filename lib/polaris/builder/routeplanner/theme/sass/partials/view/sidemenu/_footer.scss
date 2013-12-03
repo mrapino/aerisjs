@@ -25,20 +25,7 @@ $footerHeight: 35px;
     color: $text-offWhite;
     line-height: 1.25em;
 
-    a {
-      @extend %cleanLink;
-      &, &:hover, &:active {
-        color: $text-offWhite;
-      }
-
-      li {
-        &:hover {
-          background-color: #000;
-        }
-        &:active {
-          background-color: #292929;
-        }
-      }
+    li {
     }
 
     ul {
@@ -53,6 +40,22 @@ $footerHeight: 35px;
         padding: 8px 10px;
 
         border-right: 1px solid #414141;
+
+
+        cursor: pointer;
+        &:hover, a:hover {
+          color: $text-offWhite;
+          background-color: #000;
+        }
+        &:active, a:active {
+          color: $text-offWhite;
+          background-color: #292929;
+        }
+
+        a {
+          @extend %cleanLink;
+          color: $text-offWhite;
+        }
       }
     }
 
