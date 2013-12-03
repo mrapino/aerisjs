@@ -1,0 +1,10 @@
+/**
+ * Widget styles.
+*/
+@import "../../widget/collapsablered";
+
+.sideMenu {
+  section {
+    @extend %collapsableRed;
+  }
+}

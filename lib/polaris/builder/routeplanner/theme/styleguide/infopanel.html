@@ -1,10 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="css/styleguide.css"/>
+  <link rel="stylesheet" href="../css/style.css"/>
   <link rel="shortcut icon" type="image/x-icon" href="/examples/weather.ico"/>
   <title>RiderX Portal InfoPanel Style Guide</title>
 </head>
 <body>
+
+<div class="sg-container aeris-maps-app">
+  <div class="sg-mapApp">
+
+    <div class="infoPanel">
+      <h1>Waypoint details</h1>
+
+      <section class="title">
+        <h2>Joe's Gas and Grub</h2>
+        <small>near Embarrass, MN</small>
+      </section>
+
+      <section class="attributes">
+        <ul class="attributes">
+          <li>
+            <span class="icon-food">Fast Food</span>
+          </li>
+          <li>
+            <span class="icon-favorite">3</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="address">
+        736 Main St
+        Embarrass, MN 55732
+        218-555-7393
+      </section>
+
+      <section>
+        <a class="externalButton" target="_blank" href="http://www.polaris.com/en-us/company/polaris-apps.aspx">Visit Website</a>
+      </section>
+
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('.infoPanel>h1').click(function() {
+    $(this).toggleClass('state-closed');
+  });
+</script>
 
 </body>
 </html>

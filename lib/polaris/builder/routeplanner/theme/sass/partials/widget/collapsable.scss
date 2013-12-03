@@ -1,0 +1,49 @@
+/**
+ * Collapsable widget.
+ *
+ * The widget has "open" and "closed" states.
+ * The widget has a Toggle Switch, which is visible in
+ * both open and closed states.
+ *    All other content is hidden in the closed state.
+*/
+@mixin setOpenState {
+  &,
+  &.state-open {
+    @content;
+  }
+}
+
+@mixin setClosedState {
+  &.state-closed {
+    @content;
+  }
+}
+
+@mixin setToggleSwitchStyles {
+  &>h1:first-child, .collapseableToggle {
+    @content;
+  }
+}
+
+
+@import "collapsable/closeall";
+@import "collapsable/appendicon";
+@import "collapsable/toggleswitch";
+
+
+%collapsable {
+  @include setOpenState {
+    @include setToggleSwitchStyles {
+      @extend %toggleSwitch;
+    }
+  }
+
+
+  @include setClosedState {
+    @extend %closeAllExceptToggle;
+
+    @include setToggleSwitchStyles {
+      @extend %toggleSwitchClosed;
+    }
+  }
+}

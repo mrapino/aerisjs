@@ -1,0 +1,10 @@
+/**
+ * Fonts
+*/
+@mixin font-body {
+  font-family: "Urbano Condensed", Arial, sans-serif;
+}
+@mixin font-header {
+  font-family: "Urbano Condensed", Arial, sans-serif;
+  font-weight: bold;
+}

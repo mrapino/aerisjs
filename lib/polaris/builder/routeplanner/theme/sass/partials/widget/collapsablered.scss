@@ -1,0 +1,20 @@
+@import "collapsable";
+@import "../button";
+
+%collapsableRed {
+  @extend %collapsable;
+
+  @include setOpenState {
+    @include setToggleSwitchStyles {
+      @extend %toggleSwitch;
+      @extend %buttonWithRedBg;
+    }
+  }
+
+  @include setClosedState {
+    @include setToggleSwitchStyles {
+      @extend %toggleSwitchClosed;
+      @extend %buttonWithDarkBg;
+    }
+  }
+}

@@ -1,3 +1,8 @@
+@import "compass/css3/appearance";
+@import "compass/css3/box-shadow";
+@import "compass/css3/box-sizing";
+@import "typography";
+
 /**
  * Button styles.
 */
@@ -42,6 +47,35 @@
   }
   &:active {
     background-color: #aeaeae;
+  }
+}
+
+
+%buttonWithRedBg {
+  @extend %textOnRedBg;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: $redDk;
+  }
+
+  &:active {
+    background-color: $black;
+  }
+}
+
+%buttonWithDarkBg {
+  @extend %textOnDarkBg;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #000;
+  }
+
+  &:active {
+    background-color: $redDk;
   }
 }
 

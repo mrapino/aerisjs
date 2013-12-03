@@ -1,0 +1,35 @@
+@import "compass/utilities/general/clearfix";
+@import "../../icon";
+
+@mixin appendIcon {
+  @include pie-clearfix;
+
+  .icon-sprite {
+    margin-right: 5px;
+    vertical-align: -3px;
+  }
+
+  &:after {
+    content: '';
+
+    position: relative;
+    top: 2px;
+
+    float: right;
+
+    @content;
+  }
+}
+
+%withCloseIcon {
+  @include appendIcon {
+    @extend .icon-close;
+  }
+}
+
+%withOpenIcon {
+  @include appendIcon {
+    @extend .icon-rChevronDk;
+    top: 1px;
+  }
+}
