@@ -13,18 +13,29 @@
   background: $greyDk;
 }
 
-.externalButton {
-  @extend .actionBtn;
-  @extend %textOnRedBg;
+@mixin appendExternalLinkIcon {
+
+  position: relative;
+
+  padding-right: 40px;
 
   &:after {
     content: '';
     @extend .icon-rDblChevronDk;
 
-    position: relative;
-    top: 2px;
-    left: 9px;
+    position: absolute;
+    top: 0.72em;    // Using em to have some chance of lining up with text.
+    right: 10px;
   }
+}
+
+.externalButton {
+  @extend .actionBtn;
+  @extend %textOnRedBg;
+
+  @include appendExternalLinkIcon;
+
+  text-align: center;
 }
 
 

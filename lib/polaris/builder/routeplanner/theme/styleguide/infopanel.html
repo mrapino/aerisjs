@@ -5,6 +5,8 @@
   <link rel="stylesheet" href="../css/style.css"/>
   <link rel="shortcut icon" type="image/x-icon" href="/examples/weather.ico"/>
   <title>RiderX Portal InfoPanel Style Guide</title>
+  
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
 </head>
 <body>
 
@@ -14,30 +16,30 @@
     <div class="infoPanel">
       <h1>Waypoint details</h1>
 
-      <section class="title">
+      <header>
         <h2>Joe's Gas and Grub</h2>
         <small>near Embarrass, MN</small>
-      </section>
+      </header>
 
       <section class="attributes">
-        <ul class="attributes">
+        <ul>
           <li>
-            <span class="icon-food">Fast Food</span>
+            <span class="icon-food"></span>Fast Food
           </li>
           <li>
-            <span class="icon-favorite">3</span>
+            <span class="icon-favorite"></span>3
           </li>
         </ul>
       </section>
 
       <section class="address">
-        736 Main St
-        Embarrass, MN 55732
-        218-555-7393
+        736 Main St<br/>
+        Embarrass, MN 55732<br/>
+        (218) 555-7393<br/>
       </section>
 
       <section>
-        <a class="externalButton" target="_blank" href="http://www.polaris.com/en-us/company/polaris-apps.aspx">Visit Website</a>
+        <a class="externalButton" href="#" onclick="return false;">Visit Website</a>
       </section>
 
     </div>
@@ -47,7 +49,7 @@
 
 <script type="text/javascript">
   $('.infoPanel>h1').click(function() {
-    $(this).toggleClass('state-closed');
+    $('.infoPanel').toggleClass('state-closed');
   });
 </script>
 

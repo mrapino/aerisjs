@@ -35,8 +35,13 @@ $sectionPadding: 10px;
   @include setPosition;
   @include setDimensions;
   @include setColors;
+
+  .externalButton {
+    display: block;
+  }
 }
 
 @import "infopanel/section";
 @import "infopanel/header";
 @import "infopanel/attributes";
+@import "infopanel/address";

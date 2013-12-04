@@ -1,0 +1,29 @@
+@mixin setAttributesStyles {
+  @include setInfoPanelStyles {
+    .attributes {
+      @content;
+    }
+  }
+}
+
+
+
+@include setAttributesStyles {
+  border-bottom: none;
+  padding-bottom: 5px;
+
+  @include setIconStyles {
+    margin-right: 5px;
+  }
+
+  font-size: 14px;
+
+
+  ul {
+    @extend %inlineList;
+
+    li {
+      margin-right: 20px;
+    }
+  }
+}

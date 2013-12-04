@@ -1,0 +1,16 @@
+@mixin setAddressStyles {
+  @include setInfoPanelStyles {
+    .address {
+      @content;
+    }
+  }
+}
+
+
+
+@include setInfoPanelStyles {
+  color: $text-greyDk;
+  font-size: 14px;
+  line-height: 1.25em;
+
+}

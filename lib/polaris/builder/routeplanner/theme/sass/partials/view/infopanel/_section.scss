@@ -1,0 +1,19 @@
+/**
+ * InfoPanel Section styles
+*/
+@mixin setSectionStyles {
+  @include setInfoPanelStyles {
+    section {
+      @content;
+    }
+  }
+}
+
+
+
+@include setSectionStyles {
+  @include box-sizing(border-box);
+  padding: $sectionPadding;
+
+  @include setInteriorHorizontalBorders(#dbdbdb);
+}
