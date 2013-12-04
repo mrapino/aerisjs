@@ -1,0 +1,36 @@
+/**
+ * Interior borders.
+*/
+@mixin removeExteriorBorder($borderPosition) {
+  $hasNoBordersSelector: null;
+
+  @if $borderPosition == top {
+    $hasNoBordersSelector: first-child;
+  }
+  @else if $borderPosition == bottom {
+    $hasNoBordersSelector: last-child;
+  }
+  @else if $borderPosition == left {
+    $hasNoBordersSelector: first-child;
+  }
+  @else if $borderPosition == right {
+    $hasNoBordersSelector: last-child;
+  }
+
+  &:#{$hasNoBordersSelector} {
+    border-#{$borderPosition}: none;
+  }
+}
+
+@mixin setInteriorBorder($color, $borderPosition) {
+  border-#{$borderPosition}: 1px solid $color;
+  @include removeExteriorBorder($borderPosition)
+}
+
+@mixin setInteriorHorizontalBorders($color:#000) {
+  @include setInteriorBorder($color, bottom);
+}
+
+@mixin setInteriorVerticalBorders($color:#000) {
+  @include setInteriorBorder($color, right);
+}

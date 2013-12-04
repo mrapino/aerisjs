@@ -1,6 +1,6 @@
-@import "collapsable";
-@import "../button";
-
+/**
+ * A styled version of the collapsable placeholder.
+*/
 %collapsableRed {
   @extend %collapsable;
 
@@ -8,6 +8,7 @@
     @include setToggleSwitchStyles {
       @extend %toggleSwitch;
       @extend %buttonWithRedBg;
+      @extend %sectionHeading;
     }
   }
 
@@ -15,6 +16,7 @@
     @include setToggleSwitchStyles {
       @extend %toggleSwitchClosed;
       @extend %buttonWithDarkBg;
+      @extend %sectionHeading;
     }
   }
 }

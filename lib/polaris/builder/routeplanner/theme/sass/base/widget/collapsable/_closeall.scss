@@ -10,7 +10,7 @@
   @include setToggleSwitchStyles {
     display: block;
 
-    .icon-sprite {
+    @include setIconStyles {
       display: inline-block;
     }
   }

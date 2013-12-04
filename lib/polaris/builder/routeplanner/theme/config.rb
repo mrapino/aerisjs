@@ -7,6 +7,8 @@ sass_dir = "sass"
 fonts_dir = "fonts"
 relative_assets = true
 
+add_import_path "sass"
+
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
 

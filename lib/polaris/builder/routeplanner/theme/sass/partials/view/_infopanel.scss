@@ -1,14 +1,42 @@
 /**
  * Infopanel
 */
-.infoPanel {
+$sectionPadding: 10px;
 
+
+@mixin setPosition {
+  position: absolute;
+  z-index: $zIndexMapOverlay;
+  top: 20px;
+  right: 20px;
+}
+
+@mixin setDimensions {
+  @include box-sizing(border-box);
   width: 250px;
-  background: #fff;
+}
 
+@mixin setColors {
+  background: rgba(white, 0.9);
   $color: $text-black;
+}
 
-  h1 {
-
+@mixin setInfoPanelStyles {
+  .infoPanel {
+    @content;
   }
 }
+
+
+
+@include setInfoPanelStyles {
+  @extend %collapsableRed;
+
+  @include setPosition;
+  @include setDimensions;
+  @include setColors;
+}
+
+@import "infopanel/section";
+@import "infopanel/header";
+@import "infopanel/attributes";

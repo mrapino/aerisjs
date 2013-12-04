@@ -1,5 +1,5 @@
 /**
- * Font definitions.
+ * Fonts
 */
 @include font-face("Urbano Condensed", font-files(
     "urbano-cond-webfont.woff",
@@ -13,3 +13,13 @@
     "urbano-boldcond-webfont.ttf",
     "urbano-boldcond-webfont.svg"
 ), "urbano-cond-webfont.eot", bold);
+
+
+
+@mixin font-body {
+  font-family: "Urbano Condensed", Arial, sans-serif;
+}
+@mixin font-header {
+  font-family: "Urbano Condensed", Arial, sans-serif;
+  font-weight: bold;
+}

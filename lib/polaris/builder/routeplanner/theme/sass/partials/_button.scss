@@ -1,86 +1,6 @@
-@import "compass/css3/appearance";
-@import "compass/css3/box-shadow";
-@import "compass/css3/box-sizing";
-@import "typography";
-
-/**
- * Button styles.
-*/
-
-%btn {
-  display: inline-block;
-  
-  @include appearance(none);
-  position: relative;
-
-  padding: 10px 20px;
-  margin: 5px;
-
-  color: $text-black;
-  font-weight: bold;
-  text-decoration: none;
-  text-transform: uppercase;
-
-  border-radius: 5px;
-  border: 1px solid rgba(0,0,0,.1);
-
-  cursor: pointer;
-
-  &:hover {
-    top: -1px;
-    left: -1px;
-    @include box-shadow(1px 1px 0 0 rgba(0, 0, 0, 0.65));
-  }
-  &:active {
-    top: 1px;
-    left: 1px;
-    @include box-shadow(none);
-  }
-}
-
-%greyBtn {
-  background-color: $greyLt;
-
-
-  &:hover {
-    background-color: $greyDk;
-  }
-  &:active {
-    background-color: #aeaeae;
-  }
-}
-
-
-%buttonWithRedBg {
-  @extend %textOnRedBg;
-
-  cursor: pointer;
-
-  &:hover {
-    background-color: $redDk;
-  }
-
-  &:active {
-    background-color: $black;
-  }
-}
-
-%buttonWithDarkBg {
-  @extend %textOnDarkBg;
-
-  cursor: pointer;
-
-  &:hover {
-    background-color: #000;
-  }
-
-  &:active {
-    background-color: $redDk;
-  }
-}
-
 .actionBtn {
   @extend %btn;
+  @extend %textOnRedBg;
 
   background: $red;
   color: $text-white;
@@ -95,6 +15,7 @@
 
 .externalButton {
   @extend .actionBtn;
+  @extend %textOnRedBg;
 
   &:after {
     content: '';

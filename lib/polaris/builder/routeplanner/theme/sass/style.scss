@@ -3,11 +3,11 @@
  *
  * style.scss
 */
+@import "compass";
+@import "base/package/base";
+
 // Wrap all styles within the aeris scope
 // to prevent global style leakage.
-@import "compass";
-@import "partials/font";
-
 .aeris-maps-app {
   width: 100%;
   height: 100%;
@@ -15,19 +15,18 @@
 
   border: 1px solid #aeaeae;
 
+
   // Vendor imports
   @import "partials/normalize";
 
+
   // Global styles
-  @import "partials/utility";
-  @import "partials/zindex";
-  @import "partials/color";
-  @import "partials/typography";
   @import "partials/icon";
   @import "partials/button";
   @import "partials/form";
   @import "partials/layout";
   @import "partials/misc";
+  @import "partials/typography";
 
   // Views
   @import "partials/view/infopanel";

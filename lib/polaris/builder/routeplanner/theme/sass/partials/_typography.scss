@@ -1,37 +1,18 @@
 /**
  * Typographic styles.
 */
-@import "color";
-
-@import "typography/colors";
-@import "typography/fonts";
-
-%textOnRedBg {
-  background-color: $red;
-  color: $text-offWhite;
-}
-
-%textOnDarkBg {
-  background-color: $black;
-  color: $text-offWhite;
-}
-
-
-%sectionHeading {
-  padding: 8px 10px;
-  margin: 0;
-  text-transform: uppercase;
-  font-size: 16px;
-  font-weight: normal;
-}
-
-
 * {
   @include font-body;
 }
 h1, h2, h3, h4, h5, h6, header {
   @include font-header;
   margin: 0;
+}
+
+small {
+  color: #444;
+  font-size: 14px;
+  font-weight: normal;
 }
 
 p {

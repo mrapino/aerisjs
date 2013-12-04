@@ -1,0 +1,12 @@
+@import "base/typography/colors";
+@import "base/colors";
+
+%textOnRedBg {
+  background-color: $red;
+  color: $text-offWhite;
+}
+
+%textOnDarkBg {
+  background-color: $black;
+  color: $text-offWhite;
+}

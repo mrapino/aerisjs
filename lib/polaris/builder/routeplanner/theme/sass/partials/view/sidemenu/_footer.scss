@@ -59,7 +59,7 @@ $footerHeight: 35px;
       }
     }
 
-    .icon-sprite {
+    @include setIconStyles {
       margin-right: 5px;
       vertical-align: -4px;
     }

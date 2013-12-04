@@ -1,0 +1,7 @@
+%cleanLink, %cleanLink:hover, %cleanLink:active {
+  color: $text-black;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  @include appearance(none);
+}

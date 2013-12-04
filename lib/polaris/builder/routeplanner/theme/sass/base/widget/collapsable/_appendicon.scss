@@ -1,10 +1,7 @@
-@import "compass/utilities/general/clearfix";
-@import "../../icon";
-
 @mixin appendIcon {
   @include pie-clearfix;
 
-  .icon-sprite {
+  @include setIconStyles {
     margin-right: 5px;
     vertical-align: -3px;
   }

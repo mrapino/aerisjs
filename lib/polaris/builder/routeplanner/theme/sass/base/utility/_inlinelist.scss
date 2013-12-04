@@ -1,0 +1,9 @@
+%inlineList {
+  @extend %resetList;
+  @include pie-clearfix;
+
+  li {
+    float: left;
+    @include inline-block;
+  }
+}

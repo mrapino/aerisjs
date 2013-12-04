@@ -3,7 +3,7 @@
 */
 .sideMenu {
   .mapControls {
-    h1 {
+    @include setToggleSwitchStyles {
       text-transform: none;
     }
 
