@@ -1,20 +1,18 @@
 /**
  * InfoPanel Header styles
 */
+
+@mixin setHeadingStyles {
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 5px;
+  }
+}
+
 @mixin setPaddingWithLeftMargin($padding) {
   padding: $padding $padding $padding 0;
   margin-left: $padding;
-}
-
-@mixin setHeadingLeading {
-  line-height: 0.85em;
-  padding-top: 5px;
-}
-
-@mixin setHeading {
-  font-size: 18px;
-  font-weight: bold;
-  @include setHeadingLeading;
 }
 
 @mixin setHeaderStyles {
@@ -29,14 +27,7 @@
 
 @include setHeaderStyles {
   @include setPaddingWithLeftMargin($sectionPadding);
+  @include setHeadingStyles;
 
   border-bottom: 1px solid $redDk;
-
-
-  h2 {
-    font-size: 18px;
-    line-height: 0.85em;
-    padding-top: 5px;
-    font-weight: bold;
-  }
 }

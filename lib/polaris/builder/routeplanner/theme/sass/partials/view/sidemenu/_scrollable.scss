@@ -1,0 +1,15 @@
+@mixin setScrollableStyles {
+  @include setSideMenuStyles {
+    .scrollable {
+      @content;
+    }
+  }
+}
+
+
+
+@include setScrollableStyles {
+  @include box-sizing(border-box);
+  height: 100%;
+  overflow-y: scroll;
+}
