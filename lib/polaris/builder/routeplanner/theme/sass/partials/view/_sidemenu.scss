@@ -3,15 +3,16 @@
  *
  * _sidemenu.scss
 */
-.sideMenu {
-  position: absolute;
-  z-index: $zIndexMapOverlay;
-
-  top: 0;
-  bottom: 0;
-  left: 0;
+.mapControlsRegion {
+  position: relative;
+  float: left;
 
   width: 250px;
+  height: 100%;
+}
+
+.sideMenu {
+  width: 100%;
   height: 100%;
   @include box-sizing(border-box);
 

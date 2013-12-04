@@ -9,13 +9,6 @@
 // Wrap all styles within the aeris scope
 // to prevent global style leakage.
 .aeris-maps-app {
-  width: 100%;
-  height: 100%;
-  position: relative;
-
-  border: 1px solid #aeaeae;
-
-
   // Vendor imports
   @import "partials/normalize";
 
@@ -29,6 +22,7 @@
   @import "partials/typography";
 
   // Views
+  @import "partials/view/app";
   @import "partials/view/infopanel";
   @import "partials/view/modal";
   @import "partials/view/sidemenu";
