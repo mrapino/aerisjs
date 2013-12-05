@@ -5,18 +5,18 @@
     <small>near {{ place.name }}, {{ place.state }}</small>
   </header>
 
+  <section class="attributes">
+    <ul>
+      <li>
+        <span class="{{typeIconClass type }}"></span>{{ service.type }}
+      </li>
+    </ul>
+  </section>
+
   <section class="address">
     {{ service.address }}<br/>
     {{ place.name}}, {{ place.state }} {{ service.postalCode }}<br/>
     {{ service.phone }}
-  </section>
-
-  <section class="attributes">
-    <ul>
-      <li>
-        {{ service.type }}
-      </li>
-    </ul>
   </section>
 
   {{#if service.url }}
