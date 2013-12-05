@@ -6,7 +6,6 @@
 
   @include setOpenState {
     @include setToggleSwitchStyles {
-      @extend %toggleSwitch;
       @extend %buttonWithRedBg;
       @extend %sectionHeading;
     }
@@ -14,7 +13,6 @@
 
   @include setClosedState {
     @include setToggleSwitchStyles {
-      @extend %toggleSwitchClosed;
       @extend %buttonWithDarkBg;
       @extend %sectionHeading;
     }
