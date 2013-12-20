@@ -30,3 +30,9 @@
     top: 1px;
   }
 }
+
+%withoutIcon {
+  @include appendIcon {
+   background-image:  none;
+  }
+}

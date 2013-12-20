@@ -1,10 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="css/styleguide.css"/>
+  <link rel="stylesheet" href="../css/style.css"/>
   <link rel="shortcut icon" type="image/x-icon" href="/examples/weather.ico"/>
-  <title>RiderX Portal Modal Window Style Guide</title>
+  <title>RiderX Portal Modal View Style Guide</title>
+
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
 </head>
 <body>
+
+<h2>Open</h2>
+
+
+<label>
+  Show loading and error
+  <input id="showLoadingAndError" type="checkbox"/>
+</label>
+<div class="sg-container aeris-maps-app">
+  <div class="sg-mapApp">
+
+    <div class="aeris-modalViewRegion">
+      <div class="aeris-modalContainer">
+        <div class="aeris-modal">
+          <h1>Save New Route</h1>
+          <section class="aeris-routeInfo">
+            <ul>
+              <li>
+                <div class="aeris-key">Total Distance</div>
+                <div class="aeris-value"><span class="aeris-distance">10.4</span> mi</div>
+              </li>
+              <li>
+                <div class="aeris-key">Total Points</div>
+                <div class="aeris-value aeris-length">7</div>
+              </li>
+            </ul>
+          </section>
+
+
+          <section class="aeris-form">
+            <label class="aeris-formError">Invalid form data</label>
+            <label>
+              Route Name
+              <input type="text" class="aeris-routeNameInput"/>
+            </label>
+
+            <label>
+              Description
+              <textarea class="aeris-routeDescrInput"></textarea>
+            </label>
+          </section>
+
+          <section class="aeris-buttons">
+            <div class="aeris-loading">Loading...</div>
+            <a href="#" class="secondaryBtn aeris-close">Cancel</a>
+            <a href="#" class="actionBtn aeris-save">Save</a>
+          </section>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<h2>Closed</h2>
+
+<div class="sg-container aeris-maps-app">
+  <div class="sg-mapApp">
+
+    <div class="aeris-modalViewRegion"></div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#showLoadingAndError').change(function() {
+    var isChecked = $(this).prop('checked');
+    var $loading = $('.aeris-loading');
+    var $error = $('.aeris-formError');
+
+    if (isChecked) {
+      $loading.show();
+      $error.show();
+    }
+    else {
+      $loading.hide();
+      $error.hide();
+    }
+  });
+</script>
 
 </body>
 </html>

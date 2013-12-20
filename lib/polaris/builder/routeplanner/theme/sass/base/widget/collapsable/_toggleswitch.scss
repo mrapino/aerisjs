@@ -8,3 +8,8 @@
   @extend %toggleSwitch;
   @extend %withOpenIcon;
 }
+
+%toggleSwitchNone {
+  cursor: default;
+  @extend %withoutIcon;
+}

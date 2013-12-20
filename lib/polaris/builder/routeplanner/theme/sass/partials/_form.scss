@@ -11,6 +11,11 @@ label {
   padding-top: 5px;
 }
 
+.aeris-formError {
+  color: $text-red;
+  font-weight: normal;
+}
+
 @import "forms/textinput";
 @import "forms/checkbox";
 @import "forms/searchinput";

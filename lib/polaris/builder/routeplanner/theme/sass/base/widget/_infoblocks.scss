@@ -1,0 +1,61 @@
+@mixin setTypography_ {
+  li {
+    .aeris-key {
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .aeris-value {
+      font-size: 30px;
+      text-align: right;
+    }
+  }
+}
+
+@mixin setBoxModel_ {
+  @include pie-clearfix;
+
+  &, li, li>* {
+    @include box-sizing(border-box);
+  }
+
+  li {
+    @include pie-clearfix;
+    float: left;
+
+    width: 50%;
+    padding: 15px 10px;
+
+    .aeris-key {
+      float: left;
+      width: 35%;
+      padding-right: 2.5%;
+    }
+
+    .aeris-value {
+      float: right;
+      width: 60%;
+      padding-left: 2.5%;
+    }
+  }
+}
+
+@mixin infoBlocksDk {
+  @extend %textOnDarkBg;
+
+  ul {
+    @extend %resetList;
+    @include pie-clearfix;
+
+    @include box-sizing(border-box);
+
+    @include setTypography_;
+    @include setBoxModel_;
+
+    li {
+      @include setInteriorVerticalBorders(#414141);
+    }
+
+  }
+
+}
