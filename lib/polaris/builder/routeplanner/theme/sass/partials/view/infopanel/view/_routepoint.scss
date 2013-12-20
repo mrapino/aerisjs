@@ -1,0 +1,59 @@
+@import "../attributetable";
+
+@mixin routePointIcon {
+  margin-left: 40px;
+  position: relative;
+
+  &:before {
+    content: '';
+    @extend .icon-routepoint;
+
+    position: absolute;
+    left: -30px;
+    top: 5px;
+  }
+}
+
+.infoPanel {
+  $leftPadding: 45px;
+  width: 270px;
+
+  .aeris-routePointInfo {
+    ul {
+      @include attributeTable;
+    }
+  }
+
+  header {
+    border: none;
+    padding-right: 0;
+    margin-left: 0;
+
+    h2 {
+      border-bottom: 1px solid #dbdbdb;
+      padding: 15px 5px;
+
+      @include routePointIcon;
+    }
+  }
+
+  .aeris-routePointInfo {
+    padding-left: $leftPadding;
+    padding-top: 0;
+    padding-bottom: 0;
+
+  }
+
+  section {
+    border: none;
+  }
+
+  button, a {
+    @include box-sizing(border-box);
+    width: 100%;
+
+    &.secondaryBtn {
+      color: #434343;
+    }
+  }
+}
