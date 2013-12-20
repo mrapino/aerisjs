@@ -25,12 +25,17 @@
       require.setStrategy('gmaps');
       require([
         'polaris/routeplanner/routeplannerbuilder',
+        'aeris/util',
+        'vendor/jquery',
         'packages/layers',
         'packages/markers',
         'polaris/maps/packages/markers',
         'polaris/maps/packages/layers',
         'polaris/maps/base/polylines/trailpolyline'
       ], function(AppBuilder) {
+        window._ = require('aeris/util');
+        window.$ = require('vendor/jquery');
+
         var builder = new AppBuilder({
           el: document.getElementById('app'),
           mapOptions: {
@@ -42,6 +47,23 @@
             window.exposed = exposed;
             window.state = exposed.get('state');
             window.eventHub = exposed.get('eventHub');
+
+            eventHub.on('route:export', function(route) {
+              eventHub.trigger('save:start');
+
+              _.delay(resolveSaveRoute, 1000);
+              console.log(JSON.stringify(route, null, 2));
+            });
+
+            function resolveSaveRoute() {
+              if (window.stubRouteError) {
+                eventHub.trigger('save:error', new Error('Error saving route.'));
+              }
+              else {
+                eventHub.trigger('save:complete');
+                alert('Check console for exported route');
+              }
+            }
           }
         });
         builder.build()
