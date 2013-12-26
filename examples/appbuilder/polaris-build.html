@@ -21,15 +21,42 @@
   </script>
   <script type="text/javascript">
     require = {
-      baseUrl: 'http://aeris-maps/lib'
+      baseUrl: 'http://aeris-maps/lib',
+      config: {
+        'aeris/config': {
+          path: '/',
+          apiId: 'wgE96YE3scTQLKjnqiMsv',
+          apiSecret: 'DGCTq4z2xxttTBwTiimwlWyxmx5IDwK0VZ7T2WMS'
+        }
+      }
     }
   </script>
   <script type="text/javascript" src="/build/lib/polaris/packages/routeplanner.js"></script>
 
-  <script type="text/javascript">
-  </script>
+
 </head>
 <body>
   <div id="app"></div>
+
+  <script type="text/javascript">
+    require([
+      'polaris/routeplanner/routeplannerbuilder'
+    ], function(AppBuilder) {
+      var builder = new AppBuilder({
+        el: document.getElementById('app'),
+        mapOptions: {
+          center: [44.97307701415332, -93.26208114624023],
+          zoom: 14
+        },
+        onload: function(exposed) {
+          console.log('builder complete');
+          window.exposed = exposed;
+          window.state = exposed.get('state');
+          window.eventHub = exposed.get('eventHub');
+        }
+      });
+      builder.build()
+    });
+  </script>
 </body>
 </html>
