@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-  <title>Polaris AppBuilder Example</title>
+  <title>MapAppBuilder</title>
 
   <link rel="shortcut icon" type="image/x-icon" href="../weather.ico"/>
+
   <link rel="stylesheet" href="../../lib/polaris/builder/routeplanner/theme/css/style.css"/>
-
-
   <style type="text/css">
     #app {
       margin: 20px auto;
@@ -15,48 +13,74 @@
       height: 600px;
     }
   </style>
-
   <script type="text/javascript"
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxTEbJsXwGRW4zDj8fpVsenDMMQGhZhUU&sensor=false&libraries=geometry">
   </script>
-  <script type="text/javascript">
-    require = {
-      baseUrl: 'http://aeris-maps/lib',
-      config: {
-        'aeris/config': {
-          path: '/',
-          apiId: 'wgE96YE3scTQLKjnqiMsv',
-          apiSecret: 'DGCTq4z2xxttTBwTiimwlWyxmx5IDwK0VZ7T2WMS'
-        }
-      }
-    }
-  </script>
-  <script type="text/javascript" src="/build/lib/polaris/packages/routeplanner.js"></script>
 
+  <script type="text/javascript" src="../../build/packages/routeplanner-min.js"></script>
 
 </head>
 <body>
-  <div id="app"></div>
+<div id="app"></div>
 
-  <script type="text/javascript">
-    require([
-      'polaris/routeplanner/routeplannerbuilder'
-    ], function(AppBuilder) {
-      var builder = new AppBuilder({
-        el: document.getElementById('app'),
-        mapOptions: {
-          center: [44.97307701415332, -93.26208114624023],
-          zoom: 14
-        },
-        onload: function(exposed) {
-          console.log('builder complete');
-          window.exposed = exposed;
-          window.state = exposed.get('state');
-          window.eventHub = exposed.get('eventHub');
-        }
-      });
-      builder.build()
-    });
-  </script>
+<script type="text/javascript">
+  function logArgs(args) {
+    console.log('logArgs: ', args);
+  }
+
+  require.config({
+    baseUrl: 'http://aeris-maps/lib',
+    config: {
+      'aeris/config': {
+        path: '/',
+        apiId: 'wgE96YE3scTQLKjnqiMsv',
+        apiSecret: 'DGCTq4z2xxttTBwTiimwlWyxmx5IDwK0VZ7T2WMS'
+      }
+    }
+  });
+
+  aeris.Loader.load({
+    'polaris/routeplanner': {
+      el: document.getElementById('app'),
+      mapType: 'gmaps',
+      mapOptions: {
+        center: [44.97307701415332, -93.26208114624023],
+        zoom: 14
+      },
+      onload: function(exposed) {
+        console.log('builder complete');
+        window.exposed = exposed;
+        window.state = exposed.get('state');
+        window.eventHub = exposed.get('eventHub');
+
+        eventHub.on('route:export', function(route) {
+          eventHub.trigger('save:start');
+
+          _.delay(resolveSaveRoute, 1000);
+          console.log(JSON.stringify(route, null, 2));
+        });
+      }
+    },
+    onload: function() {
+      console.log('aeris Loader complete', arguments);
+    },
+    onerror: function(err) {
+      console.error('Error loading', err);
+    }
+  });
+
+
+
+
+  function resolveSaveRoute() {
+    if (window.stubRouteError) {
+      eventHub.trigger('save:error', new Error('Error saving route.'));
+    }
+    else {
+      eventHub.trigger('save:complete');
+      alert('Check console for exported route');
+    }
+  }
+</script>
 </body>
 </html>
