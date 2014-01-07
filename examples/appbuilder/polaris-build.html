@@ -17,30 +17,17 @@
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxTEbJsXwGRW4zDj8fpVsenDMMQGhZhUU&sensor=false&libraries=geometry">
   </script>
 
-  <script type="text/javascript" src="../../build/packages/routeplanner-min.js"></script>
+  <script type="text/javascript" src="../../build/packages/routeplanner.js"></script>
 
 </head>
 <body>
 <div id="app"></div>
 
 <script type="text/javascript">
-  function logArgs(args) {
-    console.log('logArgs: ', args);
-  }
-
-  require.config({
-    baseUrl: 'http://aeris-maps/lib',
-    config: {
-      'aeris/config': {
-        path: '/',
-        apiId: 'wgE96YE3scTQLKjnqiMsv',
-        apiSecret: 'DGCTq4z2xxttTBwTiimwlWyxmx5IDwK0VZ7T2WMS'
-      }
-    }
-  });
-
   aeris.Loader.load({
     RiderX: {
+      apiId: 'wgE96YE3scTQLKjnqiMsv',
+      apiSecret: 'DGCTq4z2xxttTBwTiimwlWyxmx5IDwK0VZ7T2WMS',
       el: document.getElementById('app'),
       mapType: 'gmaps',
       mapOptions: {
@@ -60,12 +47,6 @@
           console.log(JSON.stringify(route, null, 2));
         });
       }
-    },
-    onload: function() {
-      console.log('aeris Loader complete', arguments);
-    },
-    onerror: function(err) {
-      console.error('Error loading', err);
     }
   });
 
