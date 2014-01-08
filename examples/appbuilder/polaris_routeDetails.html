@@ -123,7 +123,7 @@
         'text!examples/appbuilder/view/routeinfo.html.hbs',
         'text!examples/appbuilder/view/waypointinfo.html.hbs',
         'text!examples/appbuilder/view/publicwaypointinfo.html.hbs',
-        'vendor/handlebars',
+        'Handlebars',
         'vendor/jquery',
         'packages/layers',
         'packages/markers',
@@ -132,7 +132,7 @@
         'polaris/maps/base/polylines/trailpolyline'
       ], function(AppBuilder, routeInfoTemplate, waypointInfoTemplate, publicWaypointInfoTemplate) {
         window.$ = require('vendor/jquery');
-        window.Handlebars = require('vendor/handlebars');
+        window.Handlebars = require('Handlebars');
 
         Handlebars.registerHelper('toMiles', function(meters) {
           return (meters * 0.000621371).toFixed(1);
@@ -149,7 +149,7 @@
             zoom: 10
           },
           routeDetails: {
-            trailId: '51631ae300fced57170083df',
+            trailId: '52a887e200480fec21007e74',
             style: {
               strokeColor: 'green',
               strokeWeight: 8,
