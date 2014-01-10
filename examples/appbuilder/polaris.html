@@ -38,11 +38,20 @@
 
         var builder = new AppBuilder({
           el: document.getElementById('app'),
+          mapOptions: {
+            zoom: 8,
+            center: [35, -85]
+          },
+          publicTrails: {
+            default: false,
+            trailTypes: ['snow', 'orv']
+          },
           onload: function(exposed) {
             console.log('builder complete');
             window.exposed = exposed;
             window.state = exposed.get('state');
             window.eventHub = exposed.get('eventHub');
+            window.map = state.get('map');
 
             eventHub.on('route:export', function(route) {
               eventHub.trigger('save:start');
