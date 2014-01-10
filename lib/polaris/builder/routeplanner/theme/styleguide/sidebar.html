@@ -13,324 +13,328 @@
 
   <div class="sg-mapApp">
 
-    <div class="sideMenu">
-      <section class="geosearch">
-        <a class="geolocateBtn" href="#"></a>
+    <div class="mapControlsRegion">
+      <div class="sideMenu">
+        <section class="geosearch">
+          <a class="geolocateBtn" href="#"></a>
 
-        <input type="search" placeholder="Near location..."/>
-      </section>
-
-      <div class="scrollable">
-
-        <section class="mapControls state-closed">
-          <h1>
-            <span class="icon-controls"></span>
-            Map Options
-            <a class="toggleCollapseBtn" href="#"></a>
-          </h1>
-
-          <section class="menu waypointControls">
-            <h2 class="markerHeading">Waypoints</h2>
-
-            <div class="menuControls">
-              <div class="column">
-                <input type="checkbox" id="photos" checked/>
-                <label class="checkbox" for="photos">
-                  Photos
-                </label>
-
-                <input type="checkbox" id="closures"/>
-                <label class="checkbox" for="closures">
-                  Closures
-                </label>
-
-                <input type="checkbox" id="hazards"/>
-                <label class="checkbox" for="hazards">
-                  Hazards
-                </label>
-                <input type="checkbox" id="dealers"/>
-                <label class="checkbox" for="dealers">
-                  Dealers
-                </label>
-
-                <input type="checkbox" id="fuel"/>
-                <label class="checkbox" for="fuel">
-                  Fuel
-                </label>
-              </div>
-
-              <div class="column">
-                <input type="checkbox" id="Restaurants"/>
-                <label class="checkbox" for="Restaurants">
-                  Restaurants
-                </label>
-
-                <input type="checkbox" id="Lodging"/>
-                <label class="checkbox" for="Lodging">
-                  Lodging
-                </label>
-
-                <input type="checkbox" id="Medical" checked/>
-                <label class="checkbox" for="Medical">
-                  Medical
-                </label>
-
-                <input type="checkbox" id="Videos"/>
-                <label class="checkbox" for="Videos">
-                  Dest. Videos
-                </label>
-              </div>
-            </div>
-          </section>
-
-          <section class="menu">
-            <h2 class="trailHeading">Trails</h2>
-
-            <div class="menuControls">
-              <input type="checkbox" id="rider"/>
-              <label class="checkbox" for="rider">
-                Rider Created
-              </label>
-
-              <input type="checkbox" id="managed"/>
-              <label class="checkbox" for="managed">
-                Public Trails
-              </label>
-            </div>
-          </section>
+          <input type="search" placeholder="Near location..."/>
         </section>
 
-        <section>
-          <h1>Route Planner</h1>
-          <ul class="buttonMenu">
-            <li>
-              <a href="#">
-                <span class="icon-save"></span>
-                <span class="btnLabel">Save</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="icon-undo"></span>
-                <span class="btnLabel">Undo</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="icon-delete"></span>
-                <span class="btnLabel">Clear</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="icon-return"></span>
-                <span class="btnLabel">Return</span>
-              </a>
-            </li>
-          </ul>
+        <div class="scrollable">
 
-          <hr/>
+          <section class="mapControls state-closed">
+            <h1>
+              <span class="icon-controls"></span>
+              Map Options
+              <a class="toggleCollapseBtn" href="#"></a>
+            </h1>
+
+            <section class="menu waypointControls">
+              <h2 class="markerHeading">Waypoints</h2>
+
+              <div class="menuControls">
+                <div class="column">
+                  <input type="checkbox" id="photos" checked/>
+                  <label class="checkbox" for="photos">
+                    Photos
+                  </label>
+
+                  <input type="checkbox" id="closures"/>
+                  <label class="checkbox" for="closures">
+                    Closures
+                  </label>
+
+                  <input type="checkbox" id="hazards"/>
+                  <label class="checkbox" for="hazards">
+                    Hazards
+                  </label>
+                  <input type="checkbox" id="dealers"/>
+                  <label class="checkbox" for="dealers">
+                    Dealers
+                  </label>
+
+                  <input type="checkbox" id="fuel"/>
+                  <label class="checkbox" for="fuel">
+                    Fuel
+                  </label>
+                </div>
+
+                <div class="column">
+                  <input type="checkbox" id="Restaurants"/>
+                  <label class="checkbox" for="Restaurants">
+                    Restaurants
+                  </label>
+
+                  <input type="checkbox" id="Lodging"/>
+                  <label class="checkbox" for="Lodging">
+                    Lodging
+                  </label>
+
+                  <input type="checkbox" id="Medical" checked/>
+                  <label class="checkbox" for="Medical">
+                    Medical
+                  </label>
+
+                  <input type="checkbox" id="Videos"/>
+                  <label class="checkbox" for="Videos">
+                    Dest. Videos
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <section class="menu">
+              <h2 class="trailHeading">Trails</h2>
+
+              <div class="menuControls">
+                <input type="checkbox" id="rider"/>
+                <label class="checkbox" for="rider">
+                  Rider Created
+                </label>
+
+                <input type="checkbox" id="managed"/>
+                <label class="checkbox" for="managed">
+                  Public Trails
+                </label>
+              </div>
+            </section>
+          </section>
+
+          <section class="state-closed">
+            <h1>Route Planner</h1>
+            <ul class="buttonMenu">
+              <li>
+                <a href="#">
+                  <span class="icon-save"></span>
+                  <span class="btnLabel">Save</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="icon-undo"></span>
+                  <span class="btnLabel">Undo</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="icon-delete"></span>
+                  <span class="btnLabel">Clear</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="icon-return"></span>
+                  <span class="btnLabel">Return</span>
+                </a>
+              </li>
+            </ul>
+
+            <hr/>
+
+            <section>
+              <dl>
+                <dt>Total distance</dt>
+                <dd>5.61 mi</dd>
+              </dl>
+              <dl>
+                <dt>Elevation</dt>
+                <dd>673 meters</dd>
+              </dl>
+            </section>
+
+            <section class="empty">
+              <h3>No points yet</h3>
+
+              <p>
+                Begin by selecting the location on the map where
+                you would like your route to begin. Your selected
+                points will appear here as you add them along your route.
+              </p>
+            </section>
+
+          </section>
 
           <section>
-            <dl>
-              <dt>Total distance</dt>
-              <dd>5.61 mi</dd>
-            </dl>
-            <dl>
-              <dt>Elevation</dt>
-              <dd>673 meters</dd>
-            </dl>
+            <h1>Nearby Trails</h1>
+            <h5>6 Trails Found</h5>
+
+            <ul class="itemList">
+              <li>
+                <a href="#">
+                  <div class="content">
+                    <div class="title">Some Awesome Trail</div>
+
+                    <small>near North Bend, WA</small>
+                  </div>
+                  <ul class="meta">
+                    <li>39.5 mi</li>
+                    <li class="openClosed">open<span class="icon-open"></span></li>
+                  </ul>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="content">
+                    <div class="title">Some Awesome Trail</div>
+
+                    <small>near North Bend, WA</small>
+                  </div>
+                  <ul class="meta">
+                    <li>39.5 mi</li>
+                    <li class="openClosed">closed<span class="icon-closed"></span></li>
+                  </ul>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="content">
+                    <div class="title">Some Awesome Trail</div>
+
+                    <small>near North Bend, WA</small>
+                  </div>
+                  <ul class="meta">
+                    <li>39.5 mi</li>
+                    <li class="openClosed">unknown<span class="icon-unknown"></span></li>
+                  </ul>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <div class="content">
+                    <div class="title">Some Awesome Trail</div>
+
+                    <small>near North Bend, WA</small>
+                  </div>
+                  <ul class="meta">
+                    <li>39.5 mi</li>
+                    <li class="openClosed">open<span class="icon-open"></span></li>
+                  </ul>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="content">
+                    <div class="title">Some Awesome Trail</div>
+
+                    <small>near North Bend, WA</small>
+                  </div>
+                  <ul class="meta">
+                    <li>39.5 mi</li>
+                    <li class="openClosed">closed<span class="icon-closed"></span></li>
+                  </ul>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="content">
+                    <div class="title">Some Awesome Trail</div>
+
+                    <small>near North Bend, WA</small>
+                  </div>
+                  <ul class="meta">
+                    <li>39.5 mi</li>
+                    <li class="openClosed">unknown<span class="icon-unknown"></span></li>
+                  </ul>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <div class="content">
+                    <div class="title">Some Awesome Trail</div>
+
+                    <small>near North Bend, WA</small>
+                  </div>
+                  <ul class="meta">
+                    <li>39.5 mi</li>
+                    <li class="openClosed">open<span class="icon-open"></span></li>
+                  </ul>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="content">
+                    <div class="title">Some Awesome Trail</div>
+
+                    <small>near North Bend, WA</small>
+                  </div>
+                  <ul class="meta">
+                    <li>39.5 mi</li>
+                    <li class="openClosed">closed<span class="icon-closed"></span></li>
+                  </ul>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="content">
+                    <div class="title">Some Awesome Trail</div>
+
+                    <small>near North Bend, WA</small>
+                  </div>
+                  <ul class="meta">
+                    <li>39.5 mi</li>
+                    <li class="openClosed">unknown<span class="icon-unknown"></span></li>
+                  </ul>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <div class="content">
+                    <div class="title">Some Awesome Trail</div>
+
+                    <small>near North Bend, WA</small>
+                  </div>
+                  <ul class="meta">
+                    <li>39.5 mi</li>
+                    <li class="openClosed">open<span class="icon-open"></span></li>
+                  </ul>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="content">
+                    <div class="title">Some Awesome Trail</div>
+
+                    <small>near North Bend, WA</small>
+                  </div>
+                  <ul class="meta">
+                    <li>39.5 mi</li>
+                    <li class="openClosed">closed<span class="icon-closed"></span></li>
+                  </ul>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="content">
+                    <div class="title">Some Awesome Trail</div>
+
+                    <small>near North Bend, WA</small>
+                  </div>
+                  <ul class="meta">
+                    <li>39.5 mi</li>
+                    <li class="openClosed">unknown<span class="icon-unknown"></span></li>
+                  </ul>
+                </a>
+              </li>
+            </ul>
           </section>
+        </div>
 
-          <section class="empty">
-            <h3>No points yet</h3>
-
-            <p>
-              Begin by selecting the location on the map where
-              you would like your route to begin. Your selected
-              points will appear here as you add them along your route.
-            </p>
-          </section>
-
-        </section>
-
-        <section class="state-closed">
-          <h1>Nearby Trails</h1>
-          <h5>6 Trails Found</h5>
-
-          <ul class="itemList">
+        <footer>
+          <ul>
             <li>
               <a href="#">
-                <div class="content">
-                  <div class="title">Some Awesome Trail</div>
-
-                  <small>near North Bend, WA</small>
-                </div>
-                <ul class="meta">
-                  <li>39.5 mi</li>
-                  <li><span class="icon-open">OPEN</span></li>
-                </ul>
+                <span class="icon-info"></span>
               </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="content">
-                  <div class="title">Some Awesome Trail</div>
-
-                  <small>near North Bend, WA</small>
-                </div>
-                <ul class="meta">
-                  <li>39.5 mi</li>
-                  <li><span class="icon-open">OPEN</span></li>
-                </ul>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="content">
-                  <div class="title">Some Awesome Trail</div>
-
-                  <small>near North Bend, WA</small>
-                </div>
-                <ul class="meta">
-                  <li>39.5 mi</li>
-                  <li><span class="icon-open">OPEN</span></li>
-                </ul>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="content">
-                  <div class="title">Some Awesome Trail</div>
-
-                  <small>near North Bend, WA</small>
-                </div>
-                <ul class="meta">
-                  <li>39.5 mi</li>
-                  <li><span class="icon-open">OPEN</span></li>
-                </ul>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="content">
-                  <div class="title">Some Awesome Trail</div>
-
-                  <small>near North Bend, WA</small>
-                </div>
-                <ul class="meta">
-                  <li>39.5 mi</li>
-                  <li><span class="icon-open">OPEN</span></li>
-                </ul>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="content">
-                  <div class="title">Some Awesome Trail</div>
-
-                  <small>near North Bend, WA</small>
-                </div>
-                <ul class="meta">
-                  <li>39.5 mi</li>
-                  <li><span class="icon-open">OPEN</span></li>
-                </ul>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="content">
-                  <div class="title">Some Awesome Trail</div>
-
-                  <small>near North Bend, WA</small>
-                </div>
-                <ul class="meta">
-                  <li>39.5 mi</li>
-                  <li><span class="icon-open">OPEN</span></li>
-                </ul>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="content">
-                  <div class="title">Some Awesome Trail</div>
-
-                  <small>near North Bend, WA</small>
-                </div>
-                <ul class="meta">
-                  <li>39.5 mi</li>
-                  <li><span class="icon-open">OPEN</span></li>
-                </ul>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="content">
-                  <div class="title">Some Awesome Trail</div>
-
-                  <small>near North Bend, WA</small>
-                </div>
-                <ul class="meta">
-                  <li>39.5 mi</li>
-                  <li><span class="icon-open">OPEN</span></li>
-                </ul>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="content">
-                  <div class="title">Some Awesome Trail</div>
-
-                  <small>near North Bend, WA</small>
-                </div>
-                <ul class="meta">
-                  <li>39.5 mi</li>
-                  <li><span class="icon-open">OPEN</span></li>
-                </ul>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="content">
-                  <div class="title">Some Awesome Trail</div>
-
-                  <small>near North Bend, WA</small>
-                </div>
-                <ul class="meta">
-                  <li>39.5 mi</li>
-                  <li><span class="icon-open">OPEN</span></li>
-                </ul>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="content">
-                  <div class="title">Some Awesome Trail</div>
-
-                  <small>near North Bend, WA</small>
-                </div>
-                <ul class="meta">
-                  <li>39.5 mi</li>
-                  <li><span class="icon-open">OPEN</span></li>
-                </ul>
-              </a>
+              <span>Tips</span>
             </li>
           </ul>
-        </section>
-      </div>
+        </footer>
 
-      <footer>
-        <ul>
-          <li>
-            <a href="#">
-              <span class="icon-info"></span>
-            </a>
-            <span>Tips</span>
-          </li>
-        </ul>
-      </footer>
-
-    </div>
+      </div></div>
 
 
   </div>

@@ -1,5 +1,5 @@
 @mixin setIconStyles {
-  .icon-sprite {
+  .icon-sprite, .icon-open, .icon-closed, .icon-unknown {
     @content;
   }
 }
