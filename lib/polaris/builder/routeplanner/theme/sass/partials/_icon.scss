@@ -9,3 +9,21 @@ $icon-sprite-dimensions: true;
 @include setIconStyles {
   @include inline-block;
 }
+
+@mixin circleIcon($color, $radius: 17px) {
+  @include circle($radius, $color);
+  @include box-shadow(0 0 0 2px #fff inset);
+  border: 1px solid #d2d2d2;
+
+  vertical-align: $radius * -0.25;
+}
+
+.icon-open {
+  @include circleIcon(#008000);
+}
+.icon-closed {
+  @include circleIcon($red);
+}
+.icon-unknown {
+  @include circleIcon(#aeaeae);
+}

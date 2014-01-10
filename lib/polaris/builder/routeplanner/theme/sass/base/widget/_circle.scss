@@ -1,0 +1,9 @@
+@mixin circle($radius:10px, $color:transparent) {
+  @include inline-block;
+
+  width: $radius;
+  height: $radius;
+  @include border-radius($radius);
+
+  background-color: $color;
+}
