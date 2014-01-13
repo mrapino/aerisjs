@@ -38,12 +38,8 @@
 
         var builder = new AppBuilder({
           el: document.getElementById('app'),
-          mapOptions: {
-            zoom: 8,
-            center: [35, -85]
-          },
           publicTrails: {
-            default: false,
+            default: true,
             trailTypes: ['snow', 'orv']
           },
           onload: function(exposed) {
